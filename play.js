@@ -2,9 +2,9 @@ const { connect } = require("./client");
 const { setupInput } = require("./input");
 
 console.log("Connecting ...");
-connect();
+const conn = connect();
 
-setupInput();
+setupInput(conn);
 
 /*// setup interface to handle user input from stdin
 const stdin = process.stdin;
@@ -19,7 +19,7 @@ const setupInput = function () {
 
   return stdin;
 };
-
+Update play.js to pass the object returned from connect into the setupInput function.
 const handleUserInput = function (key) {
     // \u0003 maps to ctrl+c input
     if (key === '\u0003') {

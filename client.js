@@ -1,4 +1,5 @@
 const net = require("net");
+
 //const stdin = process.stdin;
 
 const connect = () => {
@@ -11,29 +12,28 @@ const connect = () => {
 // interpret incoming data as text
 conn.setEncoding("utf8");
 
-
   conn.on('connect', () => {
 
     console.log("CONNECTED to the server ...");
     conn.write('Hello from client!');
-    conn.write(`Name: ANK`);
+    //conn.write(`Name: ANK`);
+    conn.write(`Say: hi this is a test by ank`);
 
+    // setInterval(() => {
+    //   conn.write(`Move: up`);
+    // }, 1000);
 
-    setInterval(() => {
-      conn.write(`Move: up`);
-    }, 1000);
+    // setInterval(() => {
+    //   conn.write(`Move: left`);
+    // }, 2500);
 
-    setInterval(() => {
-      conn.write(`Move: left`);
-    }, 2500);
-
-    setInterval(() => {
-      conn.write(`Move: down`);
-    }, 3000);
+    // setInterval(() => {
+    //   conn.write(`Move: down`);
+    // }, 3000);
        
-    setInterval(() => {
-      conn.write(`Move: right`);
-    }, 4000);
+    // setInterval(() => {
+    //   conn.write(`Move: right`);
+    // }, 4000);
 
 
     /*setTimeout(() => {
@@ -108,7 +108,7 @@ conn.setEncoding("utf8");
 
 };
 console.log("Connecting ...");
-connect();
+//connect();
 
 module.exports = {
   connect
